@@ -1,0 +1,16 @@
+extends layout 
+
+block main-content 
+  h1.page-title Popular Shows!
+  table
+    thead 
+      tr 
+        th Show Title 
+        th Year
+    tbody 
+      each s in shows  
+        tr
+          td
+            - url = ` https://imdb.com/title/${s.ids.imdb}`;
+            a(href=url) #{s.title} 
+          td #{s.year}

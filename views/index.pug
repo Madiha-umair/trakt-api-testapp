@@ -1,0 +1,12 @@
+extends layout 
+
+block main-content 
+  h1.page-title Movies!
+  ul 
+    each m in movies 
+      li 
+        - url = `/movie-info?id=${m.movie.ids.imdb}`;
+        a(href=url) #{m.movie.title} (#{m.movie.year}) 
+
+  
+  
